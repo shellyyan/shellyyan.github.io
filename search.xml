@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title></title>
-      <url>%2F2017%2F01%2F05%2Ftest%2F</url>
-      <content type="text"><![CDATA[test1test1test1test1test1test1]]></content>
+      <title><![CDATA[test]]></title>
+      <url>%2F2017%2F01%2F05%2Ftitle-%20test%2F</url>
+      <content type="text"><![CDATA[tags: pythoncategories: 技术 test1test1test1test1test1test1]]></content>
     </entry>
 
     
