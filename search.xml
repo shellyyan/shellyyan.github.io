@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[All tags]]></title>
+      <title><![CDATA[我和pyhton那些事]]></title>
       <url>%2F2017%2F01%2F06%2Ftechnology%2Fpython1%2F</url>
-      <content type="text"><![CDATA[起初学Python的时候，是因为要处理一些数据(实验室的实验)，了解到Python是一个好的工具，就这样上了Python的道，嘻嘻…..当初是跟着廖雪峰老师网站上python教程走的。不得不说，廖大的教程真心不错，很适合我们初学者，简单明了，结构清晰，这里为廖大打个广告，希望优秀的资源能被更多的人分享。喜欢Python的简洁，通常就是你以为是这样的，实际就是这样的，不知道这样说对不对，反正当时运用python的第三方库画图的时候超级酷，十几行代码就搞定了一个简单的图，好像python的画图功能跟matlab很相似，下面上代码，上图，举个特别简单的例子，就是这样爱上python的，哈哈。 贴代码import matplotlib as mpl import matplotlib.pyplot as plt import numpy as np x=np.arange(0.0,6.0,0.1) plt.plot(x,[xi**2 for xi x],label=&#39;First&#39;,linewidth=4,color=&#39;black&#39;) plt.plot(x,[xi**2+2 for xi in x],label=&#39;second&#39;,color=&#39;red&#39;) plt.plot(x,[xi**2+5 for xi in x],label=&#39;third&#39;) plt.axis([0,7,-1,50]) plt.xlabel(r&quot;$\alpha$&quot;,fontsize=20) plt.ylabel(r&#39;y&#39;) plt.title(&#39;simple plot&#39;) plt.legend(loc=&#39;upper left&#39;) plt.grid(True) plt.savefig(&#39;simple plot.pdf&#39;,dpi=200) print(mpl.rcParams[&#39;figure.figsize&#39;]) print(mpl.rcParams[&#39;savefig.dpi&#39;]) print(mpl.rcParams[&#39;interactive&#39;]) plt.show() 贴图]]></content>
+      <content type="text"><![CDATA[起初学Python的时候，是因为要处理一些数据(实验室的实验)，了解到Python是一个很好的工具，就这样上了Python的道，嘻嘻….. 当初是跟着廖雪峰老师网站上pyhton教程走的。不得不说，廖大的教程真心不错，很适合我们初学者，简单明了，结构清晰，这里为廖大打个广告，希望优秀的资源能被更多的人分享。 喜欢Python的简洁，通常就是你以为是这样的，实际就是这样的，不知道这样说对不对，反正当时运用python的第三方库画图的时候超级酷，十几行代码就搞定了一个简单的图，好像python的画图功能跟matlab很相似，下面上代码，上图，举个特别简单的例子，就是这样爱上python的，哈哈。import matplotlib as mplimport matplotlib.pyplot as pltimport numpy as npx=np.arange(0.0,6.0,0.1)plt.plot(x,[xi**2 for xi in x],label=&#39;First&#39;,linewidth=4,color=&#39;black&#39;)plt.plot(x,[xi**2+2 for xi in x],label=&#39;second&#39;,color=&#39;red&#39;) plt.plot(x,[xi**2+5 for xi in x],label=&#39;third&#39;) plt.axis([0,7,-1,50]) plt.xlabel(r&quot;$\alpha$&quot;,fontsize=20) plt.ylabel(r&#39;y&#39;) plt.title(&#39;simple plot&#39;) plt.legend(loc=&#39;upper left&#39;) plt.grid(True)plt.savefig(&#39;simple plot.pdf&#39;,dpi=200) print(mpl.rcParams[&#39;figure.figsize&#39;]) print(mpl.rcParams[&#39;savefig.dpi&#39;]) print(mpl.rcParams[&#39;interactive&#39;]) plt.show() ####贴图]]></content>
     </entry>
 
     
