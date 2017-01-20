@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python, Java" />
+  <meta name="keywords" content="java 内存," />
 
 
 
@@ -84,15 +84,21 @@
 
 
 
-<meta name="description" content="心有猛虎，细嗅蔷薇">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shellyyan">
-<meta property="og:url" content="http://yoursite.com/categories/Python/index.html">
+<meta name="description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
+###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈java的内存分析">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/technology/java1/index.html">
 <meta property="og:site_name" content="Shellyyan">
-<meta property="og:description" content="心有猛虎，细嗅蔷薇">
+<meta property="og:description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
+###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+<meta property="og:image" content="http://p1.bqimg.com/4851/066e04c875261136.png">
+<meta property="og:updated_time" content="2017-01-20T04:43:46.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shellyyan">
-<meta name="twitter:description" content="心有猛虎，细嗅蔷薇">
+<meta name="twitter:title" content="浅谈java的内存分析">
+<meta name="twitter:description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
+###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+<meta name="twitter:image" content="http://p1.bqimg.com/4851/066e04c875261136.png">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Python/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/20/technology/java1/"/>
 
 
 
 
 
-  <title> 分类: Python | Shellyyan </title>
+  <title> 浅谈java的内存分析 | Shellyyan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +163,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,75 +288,223 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Python
-        <small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/01/06/technology/python2/" itemprop="url">
-              
-                <span itemprop="name">web app</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-06T16:17:15+08:00"
-              content="2017-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/01/06/technology/python1/" itemprop="url">
-              
-                <span itemprop="name">初见python</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-01-06T14:48:11+08:00"
-              content="2017-01-06" >
-          01-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/technology/java1/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="shellyyan">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Shellyyan">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Shellyyan" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅谈java的内存分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T12:43:45+08:00">
+                2017-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/20/technology/java1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/technology/java1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>想对之前学习java的内存分析做个总结，故有了此文。<br>java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。<br>下面来总结下java程序在运行过程中所涉及的内存区域。</p>
+<p>###一、栈(stack)<br>       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类型的变量（实例）。这里要注意的是，对于基本数据类型，栈保存的是它的值，二对于引用类型的变量，保存的是一个指向堆区的指针。<br>       所以，普通类型变量只是在栈区占用一块内存，而引用类型变量要在栈区和堆区各占一块内存。</p>
+<p>###二、堆(heap)<br>        堆是用来存放动态生成的数据，比如new出来的对象。要注意创建出来的对象只包含属于各自的成员变量，并不包括成员方法。因为同一个类的每个对象拥有各自的成员变量，存储在各自的堆中，但它们共享该类的方法。</p>
+<p>#####PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。</p>
+<p>###三、代码段(code segment)<br>         顾名思义，就是存放代码的地方。</p>
+<p>###四、数据段(data segment)<br>         用来存放static定义的静态成员变量、字符串常亮。</p>
+<p>#####注意：区分实例和对象<br>        例：Cat a = new Cat();此时的a叫做实例，而不是叫做对象。实例在栈中，对象在堆中，操作实例实际上是通过实例的指针间接地操作对象。多个实例可以指向同一个对象。</p>
+<p>###内存调用过程演示<br>写个简单的例子：<br>        <pre><code>public class Test{</code></pre></p>
+<pre><code>    public static void main(String[] args){
+        Cat c1 = new Cat(5,8);
+        int i = 5；
+        }
+}
+public class Cat{
+    float weight;
+    float height;
+    Cat(float _weight,float _height){
+        weight = _weight;
+        height = _height;
+    }
+}
+</code></pre><p>下面是内存调用图：<br><img src="http://p1.bqimg.com/4851/066e04c875261136.png" alt=""></p>
+<p>  程序的入口为main主函数。执行第一句代码，创建了一个c1的实例，在栈中分配了一块内存，存放一个指向堆区对象的指针XXXX。堆区为new出来的对象。创建了一个int类型的变量，由于是基本数据类型，直接存放在栈中，值为5。</p>
+<p>###小节：<br>上面是java运行过程中所涉及到的知识点。我们所要掌握的是，在这里，无非就是两种类型的变量，基本类型和引用类型。二者作为局部变量，都存放在栈中，不同的是，基本类型变量直接存放的是值，引用类型变量存放的是指向堆中对象的指针。作为参数时，基本类型变量传值，引用类型变量传指针。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java-内存/" rel="tag"># java 内存</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/06/technology/python2/" rel="next" title="web app">
+                <i class="fa fa-chevron-left"></i> web app
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/20/technology/java1/"
+     data-title="浅谈java的内存分析"
+     data-content=""
+     data-url="http://yoursite.com/2017/01/20/technology/java1/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -358,6 +512,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/20/technology/java1/"
+           data-title="浅谈java的内存分析" data-url="http://yoursite.com/2017/01/20/technology/java1/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -542,6 +704,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
