@@ -85,19 +85,19 @@
 
 
 <meta name="description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
-###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+一、栈(stack)栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈java的内存分析">
 <meta property="og:url" content="http://yoursite.com/2017/01/20/technology/java1/index.html">
 <meta property="og:site_name" content="Shellyyan">
 <meta property="og:description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
-###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+一、栈(stack)栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类">
 <meta property="og:image" content="http://p1.bqimg.com/4851/066e04c875261136.png">
-<meta property="og:updated_time" content="2017-01-20T04:43:46.218Z">
+<meta property="og:updated_time" content="2017-01-20T05:03:19.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈java的内存分析">
 <meta name="twitter:description" content="想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。
-###一、栈(stack)       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本">
+一、栈(stack)栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类">
 <meta name="twitter:image" content="http://p1.bqimg.com/4851/066e04c875261136.png">
 
 
@@ -406,13 +406,13 @@
 
       
         <p>想对之前学习java的内存分析做个总结，故有了此文。<br>java的程序运行在JVM(Java Virtual  Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。<br>下面来总结下java程序在运行过程中所涉及的内存区域。</p>
-<p>###一、栈(stack)<br>       栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类型的变量（实例）。这里要注意的是，对于基本数据类型，栈保存的是它的值，二对于引用类型的变量，保存的是一个指向堆区的指针。<br>       所以，普通类型变量只是在栈区占用一块内存，而引用类型变量要在栈区和堆区各占一块内存。</p>
-<p>###二、堆(heap)<br>        堆是用来存放动态生成的数据，比如new出来的对象。要注意创建出来的对象只包含属于各自的成员变量，并不包括成员方法。因为同一个类的每个对象拥有各自的成员变量，存储在各自的堆中，但它们共享该类的方法。</p>
-<p>#####PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。</p>
-<p>###三、代码段(code segment)<br>         顾名思义，就是存放代码的地方。</p>
-<p>###四、数据段(data segment)<br>         用来存放static定义的静态成员变量、字符串常亮。</p>
-<p>#####注意：区分实例和对象<br>        例：Cat a = new Cat();此时的a叫做实例，而不是叫做对象。实例在栈中，对象在堆中，操作实例实际上是通过实例的指针间接地操作对象。多个实例可以指向同一个对象。</p>
-<p>###内存调用过程演示<br>写个简单的例子：<br>        <pre><code>public class Test{</code></pre></p>
+<h3 id="一、栈-stack"><a href="#一、栈-stack" class="headerlink" title="一、栈(stack)"></a>一、栈(stack)</h3><pre><code>栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类型的变量（实例）。这里要注意的是，对于基本数据类型，栈保存的是它的值，二对于引用类型的变量，保存的是一个指向堆区的指针。
+所以，普通类型变量只是在栈区占用一块内存，而引用类型变量要在栈区和堆区各占一块内存。
+</code></pre><h3 id="二、堆-heap"><a href="#二、堆-heap" class="headerlink" title="二、堆(heap)"></a>二、堆(heap)</h3><pre><code>堆是用来存放动态生成的数据，比如new出来的对象。要注意创建出来的对象只包含属于各自的成员变量，并不包括成员方法。因为同一个类的每个对象拥有各自的成员变量，存储在各自的堆中，但它们共享该类的方法。
+</code></pre><h5 id="PS-待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。"><a href="#PS-待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。" class="headerlink" title="PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。"></a>PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。</h5><h3 id="三、代码段-code-segment"><a href="#三、代码段-code-segment" class="headerlink" title="三、代码段(code segment)"></a>三、代码段(code segment)</h3><pre><code>顾名思义，就是存放代码的地方。
+</code></pre><h3 id="四、数据段-data-segment"><a href="#四、数据段-data-segment" class="headerlink" title="四、数据段(data segment)"></a>四、数据段(data segment)</h3><pre><code>用来存放static定义的静态成员变量、字符串常亮。
+</code></pre><h5 id="注意：区分实例和对象"><a href="#注意：区分实例和对象" class="headerlink" title="注意：区分实例和对象"></a>注意：区分实例和对象</h5><pre><code>例：Cat a = new Cat();此时的a叫做实例，而不是叫做对象。实例在栈中，对象在堆中，操作实例实际上是通过实例的指针间接地操作对象。多个实例可以指向同一个对象。
+</code></pre><h3 id="内存调用过程演示"><a href="#内存调用过程演示" class="headerlink" title="内存调用过程演示"></a>内存调用过程演示</h3><p>写个简单的例子：<br>        <pre><code>public class Test{</code></pre></p>
 <pre><code>    public static void main(String[] args){
         Cat c1 = new Cat(5,8);
         int i = 5；
@@ -428,7 +428,7 @@ public class Cat{
 }
 </code></pre><p>下面是内存调用图：<br><img src="http://p1.bqimg.com/4851/066e04c875261136.png" alt=""></p>
 <p>  程序的入口为main主函数。执行第一句代码，创建了一个c1的实例，在栈中分配了一块内存，存放一个指向堆区对象的指针XXXX。堆区为new出来的对象。创建了一个int类型的变量，由于是基本数据类型，直接存放在栈中，值为5。</p>
-<p>###小节：<br>上面是java运行过程中所涉及到的知识点。我们所要掌握的是，在这里，无非就是两种类型的变量，基本类型和引用类型。二者作为局部变量，都存放在栈中，不同的是，基本类型变量直接存放的是值，引用类型变量存放的是指向堆中对象的指针。作为参数时，基本类型变量传值，引用类型变量传指针。</p>
+<h3 id="小节："><a href="#小节：" class="headerlink" title="小节："></a>小节：</h3><p>上面是java运行过程中所涉及到的知识点。我们所要掌握的是，在这里，无非就是两种类型的变量，基本类型和引用类型。二者作为局部变量，都存放在栈中，不同的是，基本类型变量直接存放的是值，引用类型变量存放的是指向堆中对象的指针。作为参数时，基本类型变量传值，引用类型变量传指针。</p>
 
       
     </div>
@@ -539,8 +539,17 @@ public class Cat{
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -596,6 +605,22 @@ public class Cat{
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、栈-stack"><span class="nav-number">1.</span> <span class="nav-text">一、栈(stack)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、堆-heap"><span class="nav-number">2.</span> <span class="nav-text">二、堆(heap)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PS-待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。"><span class="nav-number">2.0.1.</span> <span class="nav-text">PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、代码段-code-segment"><span class="nav-number">3.</span> <span class="nav-text">三、代码段(code segment)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、数据段-data-segment"><span class="nav-number">4.</span> <span class="nav-text">四、数据段(data segment)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#注意：区分实例和对象"><span class="nav-number">4.0.1.</span> <span class="nav-text">注意：区分实例和对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存调用过程演示"><span class="nav-number">5.</span> <span class="nav-text">内存调用过程演示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小节："><span class="nav-number">6.</span> <span class="nav-text">小节：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
