@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[python爬虫之urllib库的使用]]></title>
+      <url>%2F2017%2F05%2F23%2Ftechnology%2FPython%E7%88%AC%E8%99%AB%E4%B9%8Burllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+      <content type="text"><![CDATA[一个简单的爬虫扒网页就是根据url来获取网页的信息。下面写一个爬取百度页面的爬虫。import urllib.requestrequest = urllib.request.Request(“http://www.baidu.com“)//也可以直接将url放到urlopen中response = urllib.request.urlopen(request)//urlopen(url,data,timeout),就url是必须的print(response.read())//read()可以获取到网页内容我用的是python3.x，要是python2.x，urllib.request应该改为urllib2; GET和POST传送的区别：GET直接以链接方式访问，链接中包含了所有的参数，是一种不安全的方式，但是好处是可以看到自己提交了什么内容。POST则不会在网址上显示所有的参数，但是不能直接查看提交的内容。 POST方式：import urllibimport urllib.requestimport urllib.parsevalues = {“username”:”234544444@qq.com”,”password”:”*“}data = urllib.parse.urlencode(values)url = “https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn“request = urllib.request.Request(url,data)response = urllib.request.urlopen(request)print(response.read()) GET方式：import urllibimport urllib.requestimport urllib.parsevalues={}values[‘username’] = “234544444@qq.com”values[‘password’]=”*“data = urllib.parse.urlencode(values)url = “http://passport.csdn.net/account/login“geturl = url + “?”+datarequest = urllib.request.Request(geturl)response = urllib.request.urlopen(request)print response.read()]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Python爬虫之基础知识储备]]></title>
       <url>%2F2017%2F05%2F23%2Ftechnology%2FPython%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87%2F</url>
       <content type="text"><![CDATA[1、爬虫是什么将互联网比作一张大的蜘蛛网，爬虫比作蜘蛛，蜘蛛在网上爬来爬去，遇到想要爬取的资源，就爬取下来，这个要爬取资源是自己设定的，资源爬取到本地后，经过一定的处理得到想要的结果。 2、浏览网页的过程在了解浏览网页的过程之前，首先解释一下URL，就是统一资源定位符，也就是要浏览网页的网址，是互联网上标准资源的地址。互联网上每个资源都有自己唯一的url。 URL的结构： 1. 协议（服务方式） 2. 该资源的主机IP地址（有的包含端口号） 3.主机资源的具体地址，如目录和文件名等。 浏览网页的过程：当我们向浏览器输入一个网址后，发生了什么呢？ 首先是DNS解析，把url变成ip,如何url里面不包含端口号，就使用该协议的默认端口号。 然后是建立一个socket(网络上的两个程序通过一个双向的通信连接实现数据交换，这样连接的一端称为一个socket)连接，socket连接需要ip和端口号。 连接建立成功后，向web服务器发送请求。服务器经过解析后，向用户的浏览器发送html/js/css等文件，浏览器解析出来，用户便可以看到相应的内容了。]]></content>
