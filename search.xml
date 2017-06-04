@@ -17,6 +17,20 @@
 
     
     <entry>
+      <title><![CDATA[python爬虫之urllib库的使用]]></title>
+      <url>%2F2017%2F05%2F23%2Ftechnology%2FPython%E7%88%AC%E8%99%AB%E4%B9%8Burllib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+      <content type="text"><![CDATA[一个简单的爬虫扒网页就是根据url来获取网页的信息。下面写一个爬取百度页面的爬虫。import urllib.requestrequest = urllib.request.Request(“http://www.baidu.com“)//也可以直接将url放到urlopen中response = urllib.request.urlopen(request)//urlopen(url,data,timeout),就url是必须的print(response.read())//read()可以获取到网页内容我用的是python3.x，要是python2.x，urllib.request应该改为urllib2; GET和POST传送的区别：GET直接以链接方式访问，链接中包含了所有的参数，是一种不安全的方式，但是好处是可以看到自己提交了什么内容。POST则不会在网址上显示所有的参数，但是不能直接查看提交的内容。 POST方式：import urllibimport urllib.requestimport urllib.parsevalues = {“username”:”234544444@qq.com”,”password”:”*“}data = urllib.parse.urlencode(values)url = “https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn“request = urllib.request.Request(url,data)response = urllib.request.urlopen(request)print(response.read()) GET方式：import urllibimport urllib.requestimport urllib.parsevalues={}values[‘username’] = “234544444@qq.com”values[‘password’]=”*“data = urllib.parse.urlencode(values)url = “http://passport.csdn.net/account/login“geturl = url + “?”+datarequest = urllib.request.Request(geturl)response = urllib.request.urlopen(request)print response.read()]]></content>
+    </entry>
+
+    
+    <entry>
+      <title></title>
+      <url>%2F2017%2F05%2F23%2Ftechnology%2FPython%E7%88%AC%E8%99%AB%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%82%A8%E5%A4%87%2F</url>
+      <content type="text"><![CDATA[title: Python爬虫之基础知识储备tags: python 爬虫categories: python— 1、爬虫是什么将互联网比作一张大的蜘蛛网，爬虫比作蜘蛛，蜘蛛在网上爬来爬去，遇到想要爬取的资源，就爬取下来，这个要爬取资源是自己设定的，资源爬取到本地后，经过一定的处理得到想要的结果。 2、浏览网页的过程在了解浏览网页的过程之前，首先解释一下URL，就是统一资源定位符，也就是要浏览网页的网址，是互联网上标准资源的地址。互联网上每个资源都有自己唯一的url。 URL的结构： 1. 协议（服务方式） 2. 该资源的主机IP地址（有的包含端口号） 3.主机资源的具体地址，如目录和文件名等。 浏览网页的过程：当我们向浏览器输入一个网址后，发生了什么呢？ 首先是DNS解析，把url变成ip,如何url里面不包含端口号，就使用该协议的默认端口号。 然后是建立一个socket(网络上的两个程序通过一个双向的通信连接实现数据交换，这样连接的一端称为一个socket)连接，socket连接需要ip和端口号。 连接建立成功后，向web服务器发送请求。服务器经过解析后，向用户的浏览器发送html/js/css等文件，浏览器解析出来，用户便可以看到相应的内容了。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[想做点计划]]></title>
       <url>%2F2017%2F05%2F23%2Fbetter%2F%E6%83%B3%E5%81%9A%E7%82%B9%E8%AE%A1%E5%88%92%2F</url>
       <content type="text"><![CDATA[凡事预则立，不立则废。真的是这样，一晃眼真的快半年过去了，而想做的事情没做，必须做的事情也是拖拖拉拉，而且这种什么事没做好的恐惧感会让自己陷入这个恶性循环，不能再这样了。想以后在这better里面制定一些自己的计划，记录下计划完成的进展，主要是督促自己，每天better一点点，就够了。 练字一直就喜欢好看的字，希望自己也能写的一手漂亮的字。先拍下自己现在的字，三个月后再拍个对比，每天练字半小时。本来想现在就上传的，但是图床出了点问题，暂时不想找新的图床了。 瘦腿之所以把瘦腿放在计划中，是因为我一直有个瘦腿的心，但是同样有个忍受胖子的心，最近不知受了啥刺激，就是想瘦。目前左腿据肉眼观测已经比右腿细了，不知道是不是因为我锻炼时左腿受虐比较多…反正就是要瘦腿。 看书《一只特立独行的猪》，月底总结。]]></content>
@@ -34,6 +48,20 @@
       <title><![CDATA[浅谈java的内存分析]]></title>
       <url>%2F2017%2F01%2F20%2Ftechnology%2Fjava1%2F</url>
       <content type="text"><![CDATA[想对之前学习java的内存分析做个总结，故有了此文。java的程序运行在JVM(Java Virtual Machine),也就是java虚拟机上，JVM可以理解为java程序与操作系统之间的桥梁，java的平台无关性就是基于JVM来实现的。下面来总结下java程序在运行过程中所涉及的内存区域。 一、栈(stack)栈是用来存放局部变量值的地方。这个值一般有以下两种情况，基本数据类型的值和引用类型的变量（实例）。这里要注意的是，对于基本数据类型，栈保存的是它的值，二对于引用类型的变量，保存的是一个指向堆区的指针。 所以，普通类型变量只是在栈区占用一块内存，而引用类型变量要在栈区和堆区各占一块内存。 二、堆(heap)堆是用来存放动态生成的数据，比如new出来的对象。要注意创建出来的对象只包含属于各自的成员变量，并不包括成员方法。因为同一个类的每个对象拥有各自的成员变量，存储在各自的堆中，但它们共享该类的方法。 PS:待方法执行完毕后，栈空间中局部变量的值被释放，但是堆空间的值没有立即被回收，要等到栈中没有任何指针指向这个对象时，且要等JVM回收机制回收时，堆空间的值才会被释放。三、代码段(code segment)顾名思义，就是存放代码的地方。 四、数据段(data segment)用来存放static定义的静态成员变量、字符串常亮。 注意：区分实例和对象例：Cat a = new Cat();此时的a叫做实例，而不是叫做对象。实例在栈中，对象在堆中，操作实例实际上是通过实例的指针间接地操作对象。多个实例可以指向同一个对象。 内存调用过程演示写个简单的例子： public class Test{ public static void main(String[] args){ Cat c1 = new Cat(5,8); int i = 5； } } public class Cat{ float weight; float height; Cat(float _weight,float _height){ weight = _weight; height = _height; } } 下面是内存调用图： 程序的入口为main主函数。执行第一句代码，创建了一个c1的实例，在栈中分配了一块内存，存放一个指向堆区对象的指针XXXX。堆区为new出来的对象。创建了一个int类型的变量，由于是基本数据类型，直接存放在栈中，值为5。 小节：上面是java运行过程中所涉及到的知识点。我们所要掌握的是，在这里，无非就是两种类型的变量，基本类型和引用类型。二者作为局部变量，都存放在栈中，不同的是，基本类型变量直接存放的是值，引用类型变量存放的是指向堆中对象的指针。作为参数时，基本类型变量传值，引用类型变量传指针。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[web app]]></title>
+      <url>%2F2017%2F01%2F06%2Ftechnology%2Fpython2%2F</url>
+      <content type="text"><![CDATA[学完python基础知识后，就跟着教程做了一个小项目，一个用python写的Web App。这是一个blog网站，能实现日志、用户和评论这些功能。刚开始还比较轻松，后来到ORM框架的时候就卡壳了，还是基础打的不牢，可能也因为有点急功近利，毕竟想尽快用python做个小项目。于是，老老实实的回去复习了….学完，对项目中的一些逻辑更加清晰了。在后来的项目进程中，也会遇到各种问题，网上找资料，廖大网站上学友们的答疑解惑，真的帮助了不少，在此谢谢各位帮助过我的人。项目总算顺利完成了，下面贴上一张博客的截图，为了纪念一下我的劳动成果，哈哈… 贴图]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[初见python]]></title>
+      <url>%2F2017%2F01%2F06%2Ftechnology%2Fpython1%2F</url>
+      <content type="text"><![CDATA[起初学Python的时候，是因为要处理一些数据(实验室的实验)，了解到Python是一个很好的工具，就这样上了Python的道，嘻嘻….. 当初是跟着廖雪峰老师网站上pyhton教程走的。不得不说，廖大的教程真心不错，很适合我们初学者，简单明了，结构清晰，这里为廖大打个广告，希望优秀的资源能被更多的人分享。 喜欢Python的简洁，通常就是你以为是这样的，实际就是这样的，不知道这样说对不对，反正当时运用python的第三方库画图的时候超级酷，十几行代码就搞定了一个简单的图，好像python的画图功能跟matlab很相似，下面上代码，上图，举个特别简单的例子，就是这样爱上python的，哈哈。 贴代码import matplotlib as mplimport matplotlib.pyplot as pltimport numpy as npx=np.arange(0.0,6.0,0.1)plt.plot(x,[xi**2 for xi in x],label=&#39;First&#39;,linewidth=4,color=&#39;black&#39;)plt.plot(x,[xi**2+2 for xi in x],label=&#39;second&#39;,color=&#39;red&#39;)plt.plot(x,[xi**2+5 for xi in x],label=&#39;third&#39;)plt.axis([0,7,-1,50])plt.xlabel(r&quot;$\alpha$&quot;,fontsize=20)plt.ylabel(r&#39;y&#39;)plt.title(&#39;simple plot&#39;)plt.legend(loc=&#39;upper left&#39;)plt.grid(True)plt.savefig(&#39;simple plot.pdf&#39;,dpi=200)print(mpl.rcParams[&#39;figure.figsize&#39;])print(mpl.rcParams[&#39;savefig.dpi&#39;])print(mpl.rcParams[&#39;interactive&#39;])plt.show() 贴 图]]></content>
     </entry>
 
     
